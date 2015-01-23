@@ -12,7 +12,10 @@ RSpec.describe Record, :type => :model do
     record = FactoryGirl.build(:record, artist: nil)
     expect(record).to be_invalid
   end
-  it "is invalid without a genre"
+  it "is invalid without a genre" do
+    record = FactoryGirl.build(:record, genre: nil)
+    expect(record).to be_invalid
+  end
   it "is invalid without a track listing"
   it "is invalid without liner notes"
 end

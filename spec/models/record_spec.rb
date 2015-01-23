@@ -16,6 +16,9 @@ RSpec.describe Record, :type => :model do
     record = FactoryGirl.build(:record, genre: nil)
     expect(record).to be_invalid
   end
-  it "is invalid without a track listing"
+  it "is invalid without a correct track listing" do
+    record = FactoryGirl.build(:record, track_list: "1. Confessions 2. If This World Were Mine")
+    expect(record).to eq("1. Straight Outta Compton 2. Boyz In The Hood")
+  end
   it "is invalid without liner notes"
 end

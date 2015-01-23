@@ -20,5 +20,5 @@ RSpec.describe Record, :type => :model do
     record = FactoryGirl.build(:record, track_list: "1. Confessions 2. If This World Were Mine")
     expect(record).to eq("1. Straight Outta Compton 2. Boyz In The Hood")
   end
-  it "is invalid without liner notes"
+  it "is invalid if correct producer and writer are not in liner notes"
 end
